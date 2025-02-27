@@ -5,4 +5,21 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/CV/', // This should match your repository name
-})
+
+  esbuild: {
+    loader: 'jsx',
+  },
+  resolve: {
+    alias: {
+      './runtimeConfig': './runtimeCofnig.browser',
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+  },
+
+});
