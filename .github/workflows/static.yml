@@ -39,13 +39,20 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Debug directory content
+        run: ls -la ./dist || echo "Dist directory not found"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist repository
+          # Upload the correct build directory
           path: './dist'
+          # Explicitly name the artifact
+          name: github-pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          # Specify the artifact name
+          artifact_name: github-pages
