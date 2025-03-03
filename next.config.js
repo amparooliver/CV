@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV = 'Production' // EMPTY for development. Oth
 const nextConfig = {
     basePath: isProd ? '/CV' : '',
     output: 'export',
-    distDir: 'dist',
+    //distDir: 'dist',
     images: {
         unoptimized: true,
     },
