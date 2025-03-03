@@ -8,6 +8,7 @@ const nextConfig = {
     //distDir: 'dist',
     images: {
         unoptimized: true,
+        path: isProd ? '/CV/_next/image' : '/_next/image',
     },
 };
 
